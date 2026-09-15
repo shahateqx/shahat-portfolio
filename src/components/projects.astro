@@ -1,0 +1,30 @@
+---
+const projects = [
+  { title: "Talent AQ", type: "Developer Interview Platform", description: "A collaborative interview platform with real-time video, chat, a shared Monaco editor, and in-browser code execution.", stack: ["React", "Express", "MongoDB", "Stream", "Clerk", "Inngest"], link: "https://github.com/shahateqx/talent-aq", accent: "from-violet-500/30 via-fuchsia-500/10 to-transparent" },
+  { title: "Memoir", type: "Notion-inspired Notes App", description: "A block-based note-taking app with real-time sync, secure authentication, and intuitive drag-and-drop editing.", stack: ["React", "Supabase", "PostgreSQL", "Vercel"], link: "https://github.com/shahateqx/memoir", accent: "from-cyan-500/25 via-blue-500/10 to-transparent" },
+  { title: "ADHD Detection Research", type: "Deep Learning & Neuroimaging", description: "Graph Attention Network research for classifying ADHD from resting-state fMRI data across 637 ADHD-200 subjects.", stack: ["Python", "PyTorch", "Pandas", "Scikit-learn"], link: "https://github.com/shahateqx/thesis-undergrad", accent: "from-emerald-500/25 via-teal-500/10 to-transparent" },
+];
+---
+
+<section id="projects" class="py-16 border-t border-[#ffffff10] text-[var(--white)]">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-lg text-[var(--sec)] mb-2 shiny-sec">Selected work</p>
+    <h2 class="text-4xl md:text-5xl font-medium mb-10">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.map((project) => (
+        <article class="group rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-[var(--sec)]">
+          <div class={`h-36 p-6 bg-gradient-to-br ${project.accent} border-b border-[#ffffff10]`}>
+            <span class="inline-flex rounded-full border border-[#ffffff20] bg-black/20 px-3 py-1 text-xs text-[var(--white-icon)]">{project.type}</span>
+            <h3 class="mt-5 text-3xl font-semibold">{project.title}</h3>
+          </div>
+          <div class="p-6">
+            <p class="leading-7 text-[var(--white-icon)]">{project.description}</p>
+            <div class="flex flex-wrap gap-2 mt-5">{project.stack.map((item) => <span class="rounded-md bg-white/5 px-2.5 py-1 text-xs text-[var(--white-icon)]">{item}</span>)}</div>
+            <a href={project.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-[var(--white)] hover:text-[var(--sec)]">View source <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      ))}
+    </div>
+    <a target="_blank" href="https://github.com/shahateqx" class="mt-9 inline-flex items-center gap-2 text-[var(--white-icon)] hover:text-white">More projects on GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
